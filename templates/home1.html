@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Movie Ticket Booking</title>
+</head>
+<body>
+    <h1>Welcome {{ name }}!</h1>
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+    <h2>Available Movies</h2>
+    <ul>
+        <li><a href="/b1?movie=Avengers">Avengers</a></li>
+        <li><a href="/b1?movie=Inception">Inception</a></li>
+        <li><a href="/b1?movie=Juno">Juno</a></li>
+        <li><a href="/b1?movie=Spiderman">Spiderman</a></li>
+    </ul>
+    <h2>Your Bookings</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>
+                Booking ID: {{ booking['id'] }}<br>
+                Movie: {{ booking['movie'] }}<br>
+                Seats: {{ booking['seats'] }}<br>
+                Date: {{ booking['date'] }}<br>
+                Time: {{ booking['time'] }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
